@@ -1,7 +1,6 @@
-import fs from 'node:fs/promises';
-
 import bodyParser from 'body-parser';
 import express from 'express';
+import { getHotelCountries, getHotels } from './hotel/hotel';
 
 const app = express();
 
@@ -18,13 +17,8 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/hotels', async (req, res) => {
-  const fileContent: Buffer = await fs.readFile('./assets/data/hotels.json');
-
-  const hotels = JSON.parse(fileContent.toString('utf-8'));
-
-  res.status(200).json({ hotels: hotels });
-});
+app.get('/hotels', getHotels);
+app.get('/hotels/countries', getHotelCountries);
 
 // 404
 app.use((req, res, next) => {
@@ -34,4 +28,4 @@ app.use((req, res, next) => {
   res.status(404).json({ message: '404 - Not Found' });
 });
 
-app.listen(3100);
+app.listen(3001);

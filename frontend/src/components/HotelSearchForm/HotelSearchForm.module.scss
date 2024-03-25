@@ -1,0 +1,90 @@
+@use "../../assets/scss/mixin/breakpoints" as *;
+
+.bookingSearchFormContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+  background-image: url('../../assets/images/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include max-width(sm) {
+    background-image: none;
+  }
+}
+
+.bookingSearchForm {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  background: var(--form-background-color);
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 20px;
+  width: 990px;
+
+  @include max-width(lg) {
+    flex-direction: column;
+    width: unset;
+    gap: 20px;
+  }
+
+  @include max-width(sm) {
+    width: 100%;
+    box-shadow: 5px 5px 10px black;
+  }
+}
+
+.location {
+  width: 100%;
+
+  @include max-width(lg) {
+    width: 100%;
+  }
+}
+
+.locationMenuItem {
+  min-height: 36px !important;
+}
+
+.dateInput {
+  width: 150px;
+
+  @include max-width(lg) {
+    width: 100%;
+  }
+}
+
+.numberInput {
+  width: 120px;
+
+  @include max-width(lg) {
+    width: 100%;
+  }
+}
+
+.searchButton {
+  width: 150px;
+  height: 56px;
+
+  @include max-width(lg) {
+    width: 100%;
+  }
+}
+
+.mobileViewSearchButtonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 20px 0 20px;
+  padding: 20px;
+
+  .mobileViewSearchButton {
+    width: 100%;
+    height: 56px;
+  }
+}

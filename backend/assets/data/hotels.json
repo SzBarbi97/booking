@@ -1,8 +1,63 @@
 [
   {
-    "name": "Test1"
+    "id": "hotel1",
+    "title": "Teszt hotel1",
+    "country": "Horvátország",
+    "price": "10000"
   },
   {
-    "name": "Test2"
+    "id": "hotel2",
+    "title": "Teszt hotel2",
+    "country": "Magyarország",
+    "price": "15000"
+  },
+  {
+    "id": "hotel3",
+    "title": "Teszt hotel3",
+    "country": "Magyarország",
+    "price": "17000"
+  },
+  {
+    "id": "hotel4",
+    "title": "Teszt hotel4",
+    "country": "Magyarország",
+    "price": "18500"
+  },
+  {
+    "id": "hotel5",
+    "title": "Teszt hotel5",
+    "country": "Románia",
+    "price": "23000"
+  },
+  {
+    "id": "hotel6",
+    "title": "Teszt hotel6",
+    "country": "Lengyelország",
+    "price": "20000"
+  },
+  {
+    "id": "hotel7",
+    "title": "Teszt hotel7",
+    "country": "Horvátország",
+    "price": "16500"
+  },
+  {
+    "id": "hotel8",
+    "title": "Teszt hotel8",
+    "country": "Csehország",
+    "price": "4500"
+  },
+  {
+    "id": "hotel9",
+    "title": "Teszt hotel9",
+    "country": "Szlovákia",
+    "price": "8000"
+  },
+  {
+    "id": "hotel10",
+    "title": "Teszt hotel10",
+    "country": "Horvátország",
+    "price": "7500"
   }
 ]
+

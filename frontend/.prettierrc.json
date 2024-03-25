@@ -2,5 +2,16 @@
   "singleQuote": true,
   "bracketSameLine": true,
   "printWidth": 120,
-  "trailingComma": "es5"
+  "trailingComma": "es5",
+  "plugins": [
+    "@trivago/prettier-plugin-sort-imports"
+  ],
+  "importOrder": [
+    "^(react/(.*)$)|^(react)",
+    "^@mui/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^(?!.*[.](css|scss|png)$)[./].*$",
+    ".(png|svg|jpg)",
+    ".(css|scss)"
+  ]
 }
