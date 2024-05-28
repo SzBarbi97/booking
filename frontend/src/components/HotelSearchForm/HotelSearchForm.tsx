@@ -23,8 +23,6 @@ export function HotelSearchForm() {
     });
   }, []);
 
-  console.log('red');
-
   return (
     <>
       {mobileView ? (

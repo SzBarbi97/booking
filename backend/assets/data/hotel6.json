@@ -1,0 +1,30 @@
+{
+  "id": "hotel6",
+  "title": "Teszt hotel6",
+  "country": "Lengyelország",
+  "location": "72-600 Świnoujście, Uzdrowiskowa utca 48.",
+  "price": "20000",
+  "mainImageUrl": "http://localhost:3001/images/hotel6.png",
+  "imageUrls": [
+    "http://localhost:3001/images/hotel1.png",
+    "http://localhost:3001/images/hotel2.png",
+    "http://localhost:3001/images/hotel3.png",
+    "http://localhost:3001/images/hotel4.png"
+  ],
+  "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
+  "services": [
+    "FREE_PARKING",
+    "FREE_WIFI",
+    "OWN_RESTAURANT",
+    "NO_SMOKING"
+  ],
+  "languages": [
+    "Német",
+    "Angol",
+    "Magyar"
+  ],
+  "attractions": [
+    "Tengerparttól 200m-re",
+    "Múzeumok"
+  ]
+}

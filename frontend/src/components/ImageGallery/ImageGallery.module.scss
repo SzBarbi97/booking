@@ -1,0 +1,59 @@
+@use "../../assets/scss/mixin/breakpoints" as *;
+
+:root {
+  --additional-image-gap: 10px;
+}
+
+.container {
+  width: 400px;
+  cursor: pointer;
+}
+
+.mainImage {
+  margin-bottom: 10px;
+  width: 400px;
+  height: 300px;
+
+  @include max-width(sm) {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.additionalImagesContainer {
+  position: relative;
+  display: flex;
+  gap: var(--additional-image-gap);
+  margin-bottom: 10px;
+
+  @include max-width(sm) {
+    width: 100%;
+  }
+}
+
+.additionalImage {
+  width: 195px;
+  height: 150px;
+
+  @include max-width(sm) {
+    width: calc(50% - var(--additional-image-gap) / 2);
+  }
+}
+
+.additionalImageCountContainer {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 195px;
+  height: 150px;
+  top: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.6);
+  color: #EBE9F6;
+  font-weight: bold;
+
+  @include max-width(sm) {
+    width: calc(50% - var(--additional-image-gap) / 2);
+  }
+}

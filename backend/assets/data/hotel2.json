@@ -1,0 +1,29 @@
+{
+  "id": "hotel2",
+  "title": "Teszt hotel2",
+  "country": "Magyarország",
+  "location": "8636 Balatonszemes, Árnyas fasor 1.",
+  "price": "15000",
+  "mainImageUrl": "http://localhost:3001/images/hotel2.png",
+  "imageUrls": [
+    "http://localhost:3001/images/hotel1.png",
+    "http://localhost:3001/images/hotel3.png"
+  ],
+  "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
+  "services": [
+    "FREE_PARKING",
+    "ANIMAL_FRIENDLY",
+    "FREE_WIFI",
+    "OWN_RESTAURANT",
+    "BAR"
+  ],
+  "languages": [
+    "Német",
+    "Angol",
+    "Magyar"
+  ],
+  "attractions": [
+    "Tengerparttól 200m-re",
+    "Múzeumok"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "hotel9",
+  "title": "Teszt hotel9",
+  "country": "Szlovákia",
+  "location": "97639 Donovaly, Donovaly 1402.",
+  "price": "8000",
+  "mainImageUrl": "http://localhost:3001/images/hotel9.png",
+  "imageUrls": [
+    "http://localhost:3001/images/hotel2.png",
+    "http://localhost:3001/images/hotel3.png",
+    "http://localhost:3001/images/hotel4.png",
+    "http://localhost:3001/images/hotel10.png",
+    "http://localhost:3001/images/hotel8.png"
+  ],
+  "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
+  "services": [
+    "FREE_PARKING",
+    "ANIMAL_FRIENDLY",
+    "FREE_WIFI",
+    "OWN_RESTAURANT",
+    "BAR",
+    "WELLNESS_CENTER"
+  ],
+  "languages": [
+    "Német",
+    "Angol",
+    "Magyar"
+  ],
+  "attractions": [
+    "Tengerparttól 200m-re",
+    "Múzeumok"
+  ]
+}

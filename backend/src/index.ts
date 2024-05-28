@@ -1,6 +1,6 @@
 import bodyParser from 'body-parser';
 import express from 'express';
-import { getHotelCountries, getHotels } from './hotel/hotel';
+import { getHotel, getHotelCountries, getHotels } from './api/hotel';
 
 const app = express();
 
@@ -17,8 +17,11 @@ app.use((req, res, next) => {
   next();
 });
 
+app.use('/images', express.static('./assets/images'));
+
 app.get('/hotels', getHotels);
 app.get('/hotels/countries', getHotelCountries);
+app.get('/hotels/:id', getHotel);
 
 // 404
 app.use((req, res, next) => {
