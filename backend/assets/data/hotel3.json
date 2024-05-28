@@ -1,0 +1,35 @@
+{
+  "id": "hotel3",
+  "title": "Teszt hotel3",
+  "country": "Magyarország",
+  "location": "1061 Budapest, Király utca 8.",
+  "price": "17000",
+  "mainImageUrl": "http://localhost:3001/images/hotel3.png",
+  "imageUrls": [
+    "http://localhost:3001/images/hotel1.png",
+    "http://localhost:3001/images/hotel2.png",
+    "http://localhost:3001/images/hotel4.png",
+    "http://localhost:3001/images/hotel5.png",
+    "http://localhost:3001/images/hotel6.png",
+    "http://localhost:3001/images/hotel7.png",
+    "http://localhost:3001/images/hotel8.png",
+    "http://localhost:3001/images/hotel9.png"
+  ],
+  "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
+  "services": [
+    "FREE_PARKING",
+    "FREE_WIFI",
+    "OWN_RESTAURANT",
+    "NO_SMOKING",
+    "WELLNESS_CENTER"
+  ],
+  "languages": [
+    "Német",
+    "Angol",
+    "Magyar"
+  ],
+  "attractions": [
+    "Tengerparttól 200m-re",
+    "Múzeumok"
+  ]
+}

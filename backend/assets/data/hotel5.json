@@ -1,0 +1,32 @@
+{
+  "id": "hotel5",
+  "title": "Teszt hotel5",
+  "country": "Románia",
+  "location": "617242 Chirițeni, Malul Lacului utca 161.",
+  "price": "23000",
+  "mainImageUrl": "http://localhost:3001/images/hotel5.png",
+  "imageUrls": [
+    "http://localhost:3001/images/hotel1.png",
+    "http://localhost:3001/images/hotel2.png",
+    "http://localhost:3001/images/hotel3.png",
+    "http://localhost:3001/images/hotel4.png",
+    "http://localhost:3001/images/hotel6.png"
+  ],
+  "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
+  "services": [
+    "FREE_PARKING",
+    "FREE_WIFI",
+    "OWN_RESTAURANT",
+    "BAR",
+    "FITNESS_CENTER"
+  ],
+  "languages": [
+    "Német",
+    "Angol",
+    "Magyar"
+  ],
+  "attractions": [
+    "Tengerparttól 200m-re",
+    "Múzeumok"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "hotel3",
+  "title": "Teszt hotel4",
+  "country": "Magyarország",
+  "location": "8600 Siófok, Tihany utca 15.",
+  "price": "18500",
+  "mainImageUrl": "http://localhost:3001/images/hotel4.png",
+  "imageUrls": [
+    "http://localhost:3001/images/hotel1.png",
+    "http://localhost:3001/images/hotel2.png",
+    "http://localhost:3001/images/hotel3.png",
+    "http://localhost:3001/images/hotel5.png",
+    "http://localhost:3001/images/hotel6.png"
+  ],
+  "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
+  "services": [
+    "FREE_PARKING",
+    "ANIMAL_FRIENDLY",
+    "FREE_WIFI",
+    "OWN_RESTAURANT",
+    "FITNESS_CENTER",
+    "WELLNESS_CENTER"
+  ],
+  "languages": [
+    "Német",
+    "Angol",
+    "Magyar"
+  ],
+  "attractions": [
+    "Tengerparttól 200m-re",
+    "Múzeumok"
+  ]
+}

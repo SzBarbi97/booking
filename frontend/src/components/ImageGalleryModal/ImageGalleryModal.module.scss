@@ -1,0 +1,125 @@
+@use "../../assets/scss/mixin/breakpoints" as *;
+
+:root {
+  --box-header-height: 100px;
+  --box-footer-height: 100px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  background: black;
+  height: 100vh;
+  width: 100vw;
+
+  button {
+    color: white;
+
+    &:disabled {
+      color: gray;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  svg {
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.boxHeader {
+  display: flex;
+  align-items: center;
+  margin-right: 25px;
+  justify-content: end;
+  height: var(--box-header-height);
+}
+
+.closeButton:global.MuiButtonBase-root.MuiIconButton-root {
+  height: 50px;
+  border: 1px solid #373636;
+
+  &:hover {
+    background: #373636;
+  }
+}
+
+.boxContent {
+  display: flex;
+  justify-content: center;
+  margin-right: 25px;
+  margin-left: 25px;
+
+  @include max-width(sm) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+}
+
+.backButton:global.MuiButtonBase-root.MuiIconButton-root {
+  margin-right: 5px;
+  height: 50px;
+  border: 1px solid #373636;
+  align-self: center;
+
+  &:hover {
+    background: #373636;
+  }
+
+
+  @include max-width(sm) {
+    margin-left: 10px;
+    order: 2;
+    flex-grow: 1;
+    width: 45%;
+    border-radius: 0;
+  }
+}
+
+.forwardButton:global.MuiButtonBase-root.MuiIconButton-root  {
+  margin-left: 5px;
+  height: 50px;
+  border: 1px solid #373636;
+  align-self: center;
+
+  &:hover {
+    background: #373636;
+  }
+
+  @include max-width(sm) {
+    margin-right: 10px;
+    order: 3;
+    flex-grow: 1;
+    width: 45%;
+    border-radius: 0;
+  }
+}
+
+.imageContainer {
+  width: 100%;
+
+  img {
+    width: 100%;
+    height: calc(100vh - var(--box-header-height) - var(--box-footer-height));
+    object-fit: contain;
+  }
+
+  @include max-width(sm) {
+    order: 1;
+    width: 100%;
+  }
+}
+
+.boxFooter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--box-footer-height);
+  color: white;
+}

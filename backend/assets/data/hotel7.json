@@ -1,0 +1,30 @@
+{
+  "id": "hotel7",
+  "title": "Teszt hotel7",
+  "country": "Horvátország",
+  "location": "51512 Njivice, Primorska cesta 30 utca 30.",
+  "price": "16500",
+  "mainImageUrl": "http://localhost:3001/images/hotel7.png",
+  "imageUrls": [
+    "http://localhost:3001/images/hotel1.png",
+    "http://localhost:3001/images/hotel2.png",
+    "http://localhost:3001/images/hotel3.png"
+  ],
+  "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
+  "services": [
+    "FREE_PARKING",
+    "ANIMAL_FRIENDLY",
+    "FREE_WIFI",
+    "OWN_RESTAURANT",
+    "WELLNESS_CENTER"
+  ],
+  "languages": [
+    "Német",
+    "Angol",
+    "Magyar"
+  ],
+  "attractions": [
+    "Tengerparttól 200m-re",
+    "Múzeumok"
+  ]
+}

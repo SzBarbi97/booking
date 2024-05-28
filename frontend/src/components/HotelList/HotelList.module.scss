@@ -1,6 +1,6 @@
 .hotelListContainer {
   display: flex;
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   flex-wrap: wrap;
   margin: 50px auto;
   justify-content: center;
@@ -11,15 +11,11 @@
   height: 320px;
   margin: 10px;
   position: relative;
-}
 
-.hotelCard:hover{
-  box-shadow: 5px 5px 10px black;
-  cursor: pointer;
-}
-
-.cardContent:last-child {
-  padding: 0 0 0 20px;
+  &:hover {
+    box-shadow: 5px 5px 10px black;
+    cursor: pointer;
+  }
 }
 
 .hotelPrice {
@@ -33,6 +29,10 @@
   font-weight: bold;
 }
 
-.hotelName {
-  font-size: 12px;
+.cardContent:last-child {
+  padding: 0 0 0 20px;
+
+  .hotelName {
+    font-size: 12px;
+  }
 }
