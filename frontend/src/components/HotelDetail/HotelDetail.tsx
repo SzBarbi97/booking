@@ -3,6 +3,7 @@ import { HotelDetailProps } from '../../model/interfaces/props';
 import { HotelDescription } from '../HotelDescription/HotelDescription';
 import { HotelServiceList } from '../HotelServiceList/HotelServiceList';
 import { ImageGallery } from '../ImageGallery/ImageGallery';
+import { Map } from '../Map/Map';
 import styles from './HotelDetail.module.scss';
 
 export function HotelDetail({ hotel }: HotelDetailProps) {
@@ -19,6 +20,7 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
       <ImageGallery mainImageUrl={hotel.mainImageUrl} imageUrls={hotel.imageUrls} />
       <HotelDescription hotel={hotel} />
       <HotelServiceList services={hotel.services} />
+      <Map coordinate={hotel.coordinate} popupDescription={`${hotel.title} - ${hotel.location}`} />
     </div>
   );
 }

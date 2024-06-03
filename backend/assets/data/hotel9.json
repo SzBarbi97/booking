@@ -29,5 +29,9 @@
   "attractions": [
     "Tengerparttól 200m-re",
     "Múzeumok"
-  ]
+  ],
+  "coordinate": {
+    "latitude": 48.87759986427677,
+    "longitude": 19.22764523003381
+  }
 }

@@ -1,4 +1,4 @@
-import { Hotel, HotelListItem } from './hotel';
+import { Coordinate, Hotel, HotelListItem } from './hotel';
 
 export interface HotelListProps {
   hotels: HotelListItem[];
@@ -29,4 +29,9 @@ export interface HotelServiceListProps {
 
 export interface HotelServiceProps {
   service: string;
+}
+
+export interface MapProps {
+  coordinate: Coordinate;
+  popupDescription: string;
 }
