@@ -1,8 +1,8 @@
 {
   "id": "hotel7",
-  "title": "Teszt hotel7",
+  "title": "Sužan hotel",
   "country": "Horvátország",
-  "location": "51512 Njivice, Primorska cesta 30 utca 30.",
+  "location": "51514 Sužan, Sužan utca 7b",
   "price": "16500",
   "mainImageUrl": "http://localhost:3001/images/hotel7.png",
   "imageUrls": [

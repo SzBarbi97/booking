@@ -1,8 +1,8 @@
 {
   "id": "hotel9",
-  "title": "Teszt hotel9",
+  "title": "Donovaly hotel",
   "country": "Szlovákia",
-  "location": "97639 Donovaly, Donovaly 1402.",
+  "location": "97639 Donovaly, Donovaly utca 1402.",
   "price": "8000",
   "mainImageUrl": "http://localhost:3001/images/hotel9.png",
   "imageUrls": [

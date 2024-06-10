@@ -17,10 +17,15 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
         </p>
       </div>
 
-      <ImageGallery mainImageUrl={hotel.mainImageUrl} imageUrls={hotel.imageUrls} />
+      <div className={styles.galleryAndMapContainer}>
+        <ImageGallery mainImageUrl={hotel.mainImageUrl} imageUrls={hotel.imageUrls} />
+        <Map className={styles.hotelMap} coordinate={hotel.coordinate} popupDescription={`${hotel.title} - ${hotel.location}`} />
+      </div>
+
+
       <HotelDescription hotel={hotel} />
+
       <HotelServiceList services={hotel.services} />
-      <Map coordinate={hotel.coordinate} popupDescription={`${hotel.title} - ${hotel.location}`} />
     </div>
   );
 }

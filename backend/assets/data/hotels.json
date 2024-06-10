@@ -1,70 +1,70 @@
 [
   {
     "id": "hotel1",
-    "title": "Teszt hotel1",
+    "title": "Njivice hotel",
     "country": "Horvátország",
     "price": "10000",
     "mainImageUrl": "http://localhost:3001/images/hotel1.png"
   },
   {
     "id": "hotel2",
-    "title": "Teszt hotel2",
+    "title": "Balatonszemes hotel",
     "country": "Magyarország",
     "price": "15000",
     "mainImageUrl": "http://localhost:3001/images/hotel2.png"
   },
   {
     "id": "hotel3",
-    "title": "Teszt hotel3",
+    "title": "Budapest hotel",
     "country": "Magyarország",
     "price": "17000",
     "mainImageUrl": "http://localhost:3001/images/hotel3.png"
   },
   {
     "id": "hotel4",
-    "title": "Teszt hotel4",
+    "title": "Siófok hotel",
     "country": "Magyarország",
     "price": "18500",
     "mainImageUrl": "http://localhost:3001/images/hotel4.png"
   },
   {
     "id": "hotel5",
-    "title": "Teszt hotel5",
+    "title": "Chirițeni hotel",
     "country": "Románia",
     "price": "23000",
     "mainImageUrl": "http://localhost:3001/images/hotel5.png"
   },
   {
     "id": "hotel6",
-    "title": "Teszt hotel6",
+    "title": "Świnoujście hotel",
     "country": "Lengyelország",
     "price": "20000",
     "mainImageUrl": "http://localhost:3001/images/hotel6.png"
   },
   {
     "id": "hotel7",
-    "title": "Teszt hotel7",
+    "title": "Sužan hotel",
     "country": "Horvátország",
     "price": "16500",
     "mainImageUrl": "http://localhost:3001/images/hotel7.png"
   },
   {
     "id": "hotel8",
-    "title": "Teszt hotel8",
+    "title": "Hulín hotel",
     "country": "Csehország",
     "price": "4500",
     "mainImageUrl": "http://localhost:3001/images/hotel8.png"
   },
   {
     "id": "hotel9",
-    "title": "Teszt hotel9",
+    "title": "Donovaly hotel",
     "country": "Szlovákia",
     "price": "8000",
     "mainImageUrl": "http://localhost:3001/images/hotel9.png"
   },
   {
     "id": "hotel10",
-    "title": "Teszt hotel10",
+    "title": "Bibinje hotel",
     "country": "Horvátország",
     "price": "7500",
     "mainImageUrl": "http://localhost:3001/images/hotel10.png"

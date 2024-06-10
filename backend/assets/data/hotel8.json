@@ -1,8 +1,8 @@
 {
   "id": "hotel8",
-  "title": "Teszt hotel8",
+  "title": "Hulín hotel",
   "country": "Csehország",
-  "location": "76824 Hulín, Záhlinická 479.",
+  "location": "76824 Hulín, Záhlinická utca 479.",
   "price": "4500",
   "mainImageUrl": "http://localhost:3001/images/hotel8.png",
   "imageUrls": [

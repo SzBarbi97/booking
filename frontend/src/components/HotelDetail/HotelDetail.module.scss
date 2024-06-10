@@ -21,6 +21,17 @@
   align-items: center;
 }
 
-.mapContainer {
-  height: 400px;
+.galleryAndMapContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  @include max-width(md) {
+    display: grid;
+  }
+}
+
+.hotelMap {
+  height: 465px;
+  flex: auto;
 }

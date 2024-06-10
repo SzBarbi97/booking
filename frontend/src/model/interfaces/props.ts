@@ -34,4 +34,5 @@ export interface HotelServiceProps {
 export interface MapProps {
   coordinate: Coordinate;
   popupDescription: string;
+  className: string;
 }
