@@ -1,10 +1,11 @@
 import { HotelDescriptionProps } from '../../model/interfaces/props';
+import { formatNumberByThousand } from '../../utils/format';
 
 export function HotelDescription({ hotel }: HotelDescriptionProps) {
   return (
     <div>
       <i>
-        Szobafoglalás: <b>{hotel.price}</b> Ft/Éj-től
+        Szobafoglalás: <b>{formatNumberByThousand(hotel.price)}</b> Ft-tól
       </i>
 
       <div>

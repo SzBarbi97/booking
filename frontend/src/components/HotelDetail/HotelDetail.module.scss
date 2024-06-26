@@ -16,22 +16,15 @@
   }
 }
 
+.hotelsNavigationButton:global.MuiButtonBase-root.MuiButton-root {
+  text-transform: none;
+}
+
 .location {
   display: flex;
   align-items: center;
 }
 
-.galleryAndMapContainer {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-
-  @include max-width(md) {
-    display: grid;
-  }
-}
-
 .hotelMap {
-  height: 465px;
-  flex: auto;
+  height: 400px;
 }
