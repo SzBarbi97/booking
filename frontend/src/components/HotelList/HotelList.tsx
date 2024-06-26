@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardMedia } from '@mui/material';
 import { HotelListProps } from '../../model/interfaces/props';
 import { cn } from '../../utils';
+import { formatNumberByThousand } from '../../utils/format';
 import styles from './HotelList.module.scss';
 
 export function HotelList({ hotels }: HotelListProps) {
@@ -12,7 +13,7 @@ export function HotelList({ hotels }: HotelListProps) {
           <Card className={styles.hotelCard}>
             <CardMedia component="img" height="250" src={hotel.mainImageUrl} alt={hotel.title} />
 
-            <p className={styles.hotelPrice}>Szoba: {hotel.price} Ft/Éj</p>
+            <p className={styles.hotelPrice}>Szoba: {formatNumberByThousand(hotel.price)} Ft-tól</p>
 
             <CardContent className={styles.cardContent}>
               <h3 className="margin-0">{hotel.country}</h3>

@@ -1,6 +1,6 @@
 {
   "id": "hotel5",
-  "title": "Teszt hotel5",
+  "title": "Chirițeni hotel",
   "country": "Románia",
   "location": "617242 Chirițeni, Malul Lacului utca 161.",
   "price": "23000",
@@ -28,5 +28,9 @@
   "attractions": [
     "Tengerparttól 200m-re",
     "Múzeumok"
-  ]
+  ],
+  "coordinate": {
+    "latitude": 47.045772419348246,
+    "longitude": 26.026384669495293
+  }
 }

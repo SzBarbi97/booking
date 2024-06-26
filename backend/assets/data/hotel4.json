@@ -1,6 +1,6 @@
 {
   "id": "hotel3",
-  "title": "Teszt hotel4",
+  "title": "Siófok hotel",
   "country": "Magyarország",
   "location": "8600 Siófok, Tihany utca 15.",
   "price": "18500",
@@ -29,5 +29,9 @@
   "attractions": [
     "Tengerparttól 200m-re",
     "Múzeumok"
-  ]
+  ],
+  "coordinate": {
+    "latitude": 46.903023576743266,
+    "longitude": 18.02608299832743
+  }
 }

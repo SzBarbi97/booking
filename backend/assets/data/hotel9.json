@@ -1,8 +1,8 @@
 {
   "id": "hotel9",
-  "title": "Teszt hotel9",
+  "title": "Donovaly hotel",
   "country": "Szlovákia",
-  "location": "97639 Donovaly, Donovaly 1402.",
+  "location": "97639 Donovaly, Donovaly utca 1402.",
   "price": "8000",
   "mainImageUrl": "http://localhost:3001/images/hotel9.png",
   "imageUrls": [
@@ -29,5 +29,9 @@
   "attractions": [
     "Tengerparttól 200m-re",
     "Múzeumok"
-  ]
+  ],
+  "coordinate": {
+    "latitude": 48.87759986427677,
+    "longitude": 19.22764523003381
+  }
 }

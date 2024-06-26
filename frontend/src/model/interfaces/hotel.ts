@@ -13,6 +13,12 @@ export interface Hotel extends BaseHotel {
   imageUrls: string[];
   description: string;
   services: string[];
+  coordinate: Coordinate;
 }
 
 export type ServiceType = 'FREE_PARKING' | 'FREE_WIFI';
+
+export interface Coordinate {
+  latitude: number;
+  longitude: number;
+}

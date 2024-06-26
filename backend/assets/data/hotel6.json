@@ -1,6 +1,6 @@
 {
   "id": "hotel6",
-  "title": "Teszt hotel6",
+  "title": "Świnoujście hotel",
   "country": "Lengyelország",
   "location": "72-600 Świnoujście, Uzdrowiskowa utca 48.",
   "price": "20000",
@@ -26,5 +26,9 @@
   "attractions": [
     "Tengerparttól 200m-re",
     "Múzeumok"
-  ]
+  ],
+  "coordinate": {
+    "latitude": 53.91664529335558,
+    "longitude": 14.26403882734604
+  }
 }

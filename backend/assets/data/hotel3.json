@@ -1,6 +1,6 @@
 {
   "id": "hotel3",
-  "title": "Teszt hotel3",
+  "title": "Budapest hotel",
   "country": "Magyarország",
   "location": "1061 Budapest, Király utca 8.",
   "price": "17000",
@@ -31,5 +31,9 @@
   "attractions": [
     "Tengerparttól 200m-re",
     "Múzeumok"
-  ]
+  ],
+  "coordinate": {
+    "latitude": 47.49857779774929,
+    "longitude": 19.056616598342117
+  }
 }

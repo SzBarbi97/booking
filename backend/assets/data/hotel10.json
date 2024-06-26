@@ -1,6 +1,6 @@
 {
   "id": "hotel10",
-  "title": "Teszt hotel10",
+  "title": "Bibinje hotel",
   "country": "Horvátország",
   "location": "23205 Bibinje, Blaženog Alojzija Stepinca utca 31.",
   "price": "7500",
@@ -27,5 +27,9 @@
   "attractions": [
     "Tengerparttól 200m-re",
     "Múzeumok"
-  ]
+  ],
+  "coordinate": {
+    "latitude": 44.074550906836095,
+    "longitude": 15.282366027095899
+  }
 }
