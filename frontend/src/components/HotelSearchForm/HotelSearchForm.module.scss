@@ -52,7 +52,7 @@
   }
 }
 
-.location {
+.country {
   width: 100%;
 
   @include max-width(lg) {
@@ -60,7 +60,7 @@
   }
 }
 
-.locationMenuItem {
+.countryMenuItem {
   min-height: 36px !important;
 }
 

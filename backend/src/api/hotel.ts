@@ -3,7 +3,13 @@ import { Hotel, HotelListItem } from '../model/hotel';
 
 export async function getHotels(req: any, res: any): Promise<void> {
   const fileContent: Buffer = await fs.readFile('./assets/data/hotels.json');
-  const hotels: HotelListItem[] = JSON.parse(fileContent.toString('utf-8'));
+  let hotels: HotelListItem[] = JSON.parse(fileContent.toString('utf-8'));
+
+  const countryQuery: string | null = req.query.country;
+
+  if (countryQuery) {
+   hotels = hotels.filter((hotel) => hotel.country.toLowerCase().includes(countryQuery.toLowerCase()));
+  }
 
   res.status(200).json(hotels);
 }

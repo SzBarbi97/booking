@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react';
+import { createSearchParams, useNavigate } from 'react-router-dom';
+import { ParamKeyValuePair } from 'react-router-dom/dist/dom';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
@@ -11,6 +13,8 @@ import { useMobileView } from '../../hooks';
 import styles from './HotelSearchForm.module.scss';
 
 export function HotelSearchForm() {
+  const navigate = useNavigate();
+
   const mobileView = useMobileView();
   const [showSearch, setShowSearch] = useState(false);
   const [countries, setCountries] = useState<string[]>([]);
@@ -22,6 +26,22 @@ export function HotelSearchForm() {
       setCountries(response.data);
     });
   }, []);
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    const queryParams: ParamKeyValuePair[] = [];
+    const country = formData.get('select-country');
+    if (country) {
+      queryParams.push(['country', country.toString()]);
+    }
+
+    navigate({
+      pathname: '/hotels',
+      search: createSearchParams(queryParams).toString(),
+    });
+  };
 
   return (
     <>
@@ -38,11 +58,11 @@ export function HotelSearchForm() {
 
       {!mobileView || showSearch ? (
         <div className={styles.bookingSearchFormContainer}>
-          <form className={styles.bookingSearchForm}>
-            <FormControl className={styles.location}>
-              <InputLabel id="location">Helyszín</InputLabel>
-              <Select labelId="location" label="Helyszín" id="select-location">
-                <MenuItem className={styles.locationMenuItem} value="" />
+          <form className={styles.bookingSearchForm} onSubmit={handleSubmit}>
+            <FormControl className={styles.country} defaultValue={''}>
+              <InputLabel id="country">Helyszín</InputLabel>
+              <Select id="select-country" name="select-country" labelId="country" label="Helyszín">
+                <MenuItem className={styles.countryMenuItem} value="" />
                 {countries.map((country) => (
                   <MenuItem key={country} value={country}>
                     {country}
@@ -71,7 +91,7 @@ export function HotelSearchForm() {
               <TextField id="number-of-children" label="Gyerekek" type="number" />
             </FormControl>
 
-            <Button className={styles.searchButton} sx={{ minWidth: 150 }} variant="contained">
+            <Button className={styles.searchButton} sx={{ minWidth: 150 }} type="submit" variant="contained">
               Keresés
             </Button>
           </form>
