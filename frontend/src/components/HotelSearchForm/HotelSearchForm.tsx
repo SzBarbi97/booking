@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { createSearchParams, useNavigate } from 'react-router-dom';
 import { ParamKeyValuePair } from 'react-router-dom/dist/dom';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -19,23 +19,44 @@ export function HotelSearchForm() {
   const [showSearch, setShowSearch] = useState(false);
   const [countries, setCountries] = useState<string[]>([]);
 
-  const tomorrow = dayjs().add(1, 'day');
-
   useEffect(() => {
     getHotelCountries().then((response) => {
       setCountries(response.data);
     });
   }, []);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.target as HTMLFormElement);
 
     const queryParams: ParamKeyValuePair[] = [];
     const country = formData.get('select-country');
+    const adults = formData.get('number-of-adults');
+    const children = formData.get('number-of-children');
+    const arrival = formData.get('arrival-date');
+    const exit = formData.get('exit-date');
+
     if (country) {
       queryParams.push(['country', country.toString()]);
     }
+
+    if (adults) {
+      queryParams.push(['adults', adults.toString()]);
+    }
+
+    if (children) {
+      queryParams.push(['children', children.toString()]);
+    }
+
+    if (arrival) {
+      queryParams.push(['arrival', arrival.toString()]);
+    }
+
+    if (exit) {
+      queryParams.push(['exit', exit.toString()]);
+    }
+
+    console.log(exit, arrival);
 
     navigate({
       pathname: '/hotels',
@@ -61,7 +82,7 @@ export function HotelSearchForm() {
           <form className={styles.bookingSearchForm} onSubmit={handleSubmit}>
             <FormControl className={styles.country} defaultValue={''}>
               <InputLabel id="country">Helyszín</InputLabel>
-              <Select id="select-country" name="select-country" labelId="country" label="Helyszín">
+              <Select id="select-country" name="select-country" labelId="country" label="Helyszín" defaultValue="">
                 <MenuItem className={styles.countryMenuItem} value="" />
                 {countries.map((country) => (
                   <MenuItem key={country} value={country}>
@@ -73,22 +94,22 @@ export function HotelSearchForm() {
 
             <FormControl className={styles.dateInput} sx={{ minWidth: 150 }}>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker label="Érkezés" defaultValue={dayjs()} />
+                <DatePicker label="Érkezés" name="arrival-date" minDate={dayjs()} />
               </LocalizationProvider>
             </FormControl>
 
             <FormControl className={styles.dateInput} sx={{ minWidth: 150 }}>
               <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker label="Távozás" defaultValue={tomorrow} />
+                <DatePicker label="Távozás" name="exit-date" minDate={dayjs().add(1, 'day')} />
               </LocalizationProvider>
             </FormControl>
 
             <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
-              <TextField id="number-of-adults" label="Felnőttek" type="number" />
+              <TextField id="number-of-adults" name="number-of-adults" label="Felnőttek" type="number" />
             </FormControl>
 
             <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
-              <TextField id="number-of-children" label="Gyerekek" type="number" />
+              <TextField id="number-of-children" name="number-of-children" label="Gyerekek" type="number" />
             </FormControl>
 
             <Button className={styles.searchButton} sx={{ minWidth: 150 }} type="submit" variant="contained">

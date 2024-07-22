@@ -1,21 +1,24 @@
 {
-  "id": "hotel2",
-  "title": "Balatonszemes hotel",
+  "id": "hotel11",
+  "title": "Eger hotel",
   "country": "Magyarország",
-  "location": "8636 Balatonszemes, Árnyas fasor 1.",
-  "price": "15000",
-  "mainImageUrl": "http://localhost:3001/images/hotel2.png",
+  "location": "3300 Eger, Dobó István tér 1.",
+  "price": "19500",
+  "mainImageUrl": "http://localhost:3001/images/hotel11.png",
   "imageUrls": [
-    "http://localhost:3001/images/hotel1.png",
-    "http://localhost:3001/images/hotel3.png"
+    "http://localhost:3001/images/hotel12.png",
+    "http://localhost:3001/images/hotel3.png",
+    "http://localhost:3001/images/hotel4.png",
+    "http://localhost:3001/images/hotel5.png",
+    "http://localhost:3001/images/hotel9.png"
   ],
   "description": "A helyszínen zárt udvari kocsibeálló van biztosítva a nálunk megszálló vendégek számára. A szobákhoz síkképernyős TV, saját fürdőszoba WC-vel, ágynemű és törölköző is tartozik. A szobákban megtalálható mikrohullámú sütő és hűtőszekrény egyaránt. A vendégek számára svédasztalos reggelit biztosítunk.",
   "services": [
     "FREE_PARKING",
-    "ANIMAL_FRIENDLY",
     "FREE_WIFI",
     "OWN_RESTAURANT",
-    "BAR"
+    "NO_SMOKING",
+    "FITNESS_CENTER"
   ],
   "languages": [
     "Német",
@@ -23,13 +26,13 @@
     "Magyar"
   ],
   "attractions": [
-    "Tengerparttól 200m-re",
-    "Múzeumok"
+    "Múzeumok",
+    "Bevásárlóközpontok"
   ],
   "coordinate": {
-    "latitude": 46.81040673787473,
-    "longitude": 17.782655913667814
+    "latitude": 47.9027473,
+    "longitude": 20.3737449
   },
-  "maxAdults": 4,
-  "maxChildren": 4
+  "maxAdults": 10,
+  "maxChildren": 10
 }

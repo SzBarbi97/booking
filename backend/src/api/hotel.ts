@@ -1,14 +1,32 @@
 import fs from 'node:fs/promises';
 import { Hotel, HotelListItem } from '../model/hotel';
+import { readDetailedHotels } from '../file/file';
 
 export async function getHotels(req: any, res: any): Promise<void> {
   const fileContent: Buffer = await fs.readFile('./assets/data/hotels.json');
   let hotels: HotelListItem[] = JSON.parse(fileContent.toString('utf-8'));
 
   const countryQuery: string | null = req.query.country;
+  const adultsQuery: number | null = req.query.adults;
+  const childrenQuery: number | null = req.query.children;
 
   if (countryQuery) {
-   hotels = hotels.filter((hotel) => hotel.country.toLowerCase().includes(countryQuery.toLowerCase()));
+    hotels = hotels.filter((hotel) => hotel.country.toLowerCase().includes(countryQuery.toLowerCase()));
+  }
+
+  if (adultsQuery || childrenQuery) {
+    let detailedHotels: Hotel[] = readDetailedHotels(hotels);
+
+    if (adultsQuery) {
+      detailedHotels = detailedHotels.filter((hotel) => hotel.maxAdults >= adultsQuery);
+    }
+
+    if (childrenQuery) {
+      detailedHotels = detailedHotels.filter((hotel) => hotel.maxChildren >= childrenQuery);
+    }
+
+    const detailedHotelIds: string[] = detailedHotels.map((hotel) => hotel.id);
+    hotels = hotels.filter((hotel) => detailedHotelIds.includes(hotel.id));
   }
 
   res.status(200).json(hotels);
