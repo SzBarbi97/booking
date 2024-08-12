@@ -1,15 +1,12 @@
 import { FormEvent, useEffect, useState } from 'react';
-import { createSearchParams, useNavigate } from 'react-router-dom';
+import { createSearchParams, useNavigate, useSearchParams } from 'react-router-dom';
 import { ParamKeyValuePair } from 'react-router-dom/dist/dom';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
-import { LocalizationProvider } from '@mui/x-date-pickers';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-import dayjs from 'dayjs';
 import { getHotelCountries } from '../../api/hotel';
 import { useMobileView } from '../../hooks';
+import { ReservationOfDatePicker } from '../ReservationOfDatePicker/ReservationOfDatePicker';
 import styles from './HotelSearchForm.module.scss';
 
 export function HotelSearchForm() {
@@ -18,6 +15,10 @@ export function HotelSearchForm() {
   const mobileView = useMobileView();
   const [showSearch, setShowSearch] = useState(false);
   const [countries, setCountries] = useState<string[]>([]);
+
+  const [searchParams] = useSearchParams();
+
+  const countrySearchParam = searchParams.get('country');
 
   useEffect(() => {
     getHotelCountries().then((response) => {
@@ -56,8 +57,6 @@ export function HotelSearchForm() {
       queryParams.push(['exit', exit.toString()]);
     }
 
-    console.log(exit, arrival);
-
     navigate({
       pathname: '/hotels',
       search: createSearchParams(queryParams).toString(),
@@ -76,7 +75,6 @@ export function HotelSearchForm() {
           </Button>
         </div>
       ) : null}
-
       {!mobileView || showSearch ? (
         <div className={styles.bookingSearchFormContainer}>
           <form className={styles.bookingSearchForm} onSubmit={handleSubmit}>
@@ -85,24 +83,14 @@ export function HotelSearchForm() {
               <Select id="select-country" name="select-country" labelId="country" label="Helyszín" defaultValue="">
                 <MenuItem className={styles.countryMenuItem} value="" />
                 {countries.map((country) => (
-                  <MenuItem key={country} value={country}>
+                  <MenuItem key={country} value={country} selected={country === countrySearchParam}>
                     {country}
                   </MenuItem>
                 ))}
               </Select>
             </FormControl>
 
-            <FormControl className={styles.dateInput} sx={{ minWidth: 150 }}>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker label="Érkezés" name="arrival-date" minDate={dayjs()} />
-              </LocalizationProvider>
-            </FormControl>
-
-            <FormControl className={styles.dateInput} sx={{ minWidth: 150 }}>
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DatePicker label="Távozás" name="exit-date" minDate={dayjs().add(1, 'day')} />
-              </LocalizationProvider>
-            </FormControl>
+            <ReservationOfDatePicker />
 
             <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
               <TextField id="number-of-adults" name="number-of-adults" label="Felnőttek" type="number" />

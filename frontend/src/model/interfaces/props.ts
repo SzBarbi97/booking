@@ -36,3 +36,9 @@ export interface MapProps {
   popupDescription: string;
   className: string;
 }
+
+export interface ErrorTooltipProps {
+  errorMessage: string;
+  showErrorMessage: boolean;
+  className?: string;
+}
