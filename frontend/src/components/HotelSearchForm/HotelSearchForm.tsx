@@ -8,6 +8,7 @@ import dayjs from 'dayjs';
 import { getHotelCountries } from '../../api/hotel';
 import { useMobileView } from '../../hooks';
 import { CountryPickerProps, NumberOfAdultsProps, NumberOfChildrenProps } from '../../model/interfaces/props';
+import { ErrorTooltip } from '../ErrorTooltip/ErrorTooltip';
 import { ReservationOfDatePicker } from '../ReservationOfDatePicker/ReservationOfDatePicker';
 import styles from './HotelSearchForm.module.scss';
 
@@ -133,6 +134,8 @@ function CountryPicker({ countries, countryDefault }: CountryPickerProps) {
 function NumberOfAdultsPicker({ numberOfAdultsDefault }: NumberOfAdultsProps) {
   const [adultsNumber, setAdultsNumber] = useState(numberOfAdultsDefault || '');
 
+  const numberOfAdultsErrorMessage = parseInt(adultsNumber) < 0 ? 'A felnőttek száma nem lehet kisebb 0-nál.' : '';
+
   return (
     <>
       <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
@@ -141,7 +144,14 @@ function NumberOfAdultsPicker({ numberOfAdultsDefault }: NumberOfAdultsProps) {
           label="Felnőttek"
           type="number"
           value={adultsNumber}
+          error={!!numberOfAdultsErrorMessage}
           onChange={(event) => setAdultsNumber(event.target.value)}
+        />
+
+        <ErrorTooltip
+          className={styles.errorTooltip}
+          errorMessage={numberOfAdultsErrorMessage}
+          showErrorMessage={!!numberOfAdultsErrorMessage}
         />
       </FormControl>
     </>
@@ -151,6 +161,8 @@ function NumberOfAdultsPicker({ numberOfAdultsDefault }: NumberOfAdultsProps) {
 function NumberOfChildrenPicker({ numberOfChildrenDefault }: NumberOfChildrenProps) {
   const [childrenNumber, setChildrenNumber] = useState(numberOfChildrenDefault || '');
 
+  const numberOfChildrenErrorMessage = parseInt(childrenNumber) < 0 ? 'A gyerekek száma nem lehet kisebb 0-nál.' : '';
+
   return (
     <>
       <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
@@ -159,7 +171,14 @@ function NumberOfChildrenPicker({ numberOfChildrenDefault }: NumberOfChildrenPro
           label="Gyerekek"
           type="number"
           value={childrenNumber}
+          error={!!numberOfChildrenErrorMessage}
           onChange={(event) => setChildrenNumber(event.target.value)}
+        />
+
+        <ErrorTooltip
+          className={styles.errorTooltip}
+          errorMessage={numberOfChildrenErrorMessage}
+          showErrorMessage={!!numberOfChildrenErrorMessage}
         />
       </FormControl>
     </>
