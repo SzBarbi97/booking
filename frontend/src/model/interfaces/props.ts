@@ -1,3 +1,4 @@
+import { Dayjs } from 'dayjs';
 import { Coordinate, Hotel, HotelListItem } from './hotel';
 
 export interface HotelListProps {
@@ -41,4 +42,22 @@ export interface ErrorTooltipProps {
   errorMessage: string;
   showErrorMessage: boolean;
   className?: string;
+}
+
+export interface CountryPickerProps {
+  countries: string[];
+  countryDefault?: string;
+}
+
+export interface ReservationOfDatePickerProps {
+  arrivalDateDefault?: Dayjs;
+  exitDateDefault?: Dayjs;
+}
+
+export interface NumberOfAdultsProps {
+  numberOfAdultsDefault?: string;
+}
+
+export interface NumberOfChildrenProps {
+  numberOfChildrenDefault?: string;
 }

@@ -7,8 +7,10 @@ export async function getHotels(req: any, res: any): Promise<void> {
   let hotels: HotelListItem[] = JSON.parse(fileContent.toString('utf-8'));
 
   const countryQuery: string | null = req.query.country;
-  const adultsQuery: number | null = req.query.adults;
-  const childrenQuery: number | null = req.query.children;
+  const adultsQuery: number | null = req.query.numberOfAdults;
+  const childrenQuery: number | null = req.query.numberOfChildren;
+
+  // A mock alkalmazásban az arrival date-re és exit date-re nem szűrűnk
 
   if (countryQuery) {
     hotels = hotels.filter((hotel) => hotel.country.toLowerCase().includes(countryQuery.toLowerCase()));

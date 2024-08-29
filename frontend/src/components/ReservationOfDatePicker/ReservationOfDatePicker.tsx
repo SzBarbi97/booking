@@ -4,12 +4,13 @@ import { DateValidationError, LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 import dayjs, { Dayjs } from 'dayjs';
+import { ReservationOfDatePickerProps } from '../../model/interfaces/props';
 import { ErrorTooltip } from '../ErrorTooltip/ErrorTooltip';
 import styles from './ReservationOfDatePicker.module.scss';
 
-export function ReservationOfDatePicker() {
-  const [arrivalDate, setArrivalDate] = useState<Dayjs | null>(null);
-  const [exitDate, setExitDate] = useState<Dayjs | null>(null);
+export function ReservationOfDatePicker({ arrivalDateDefault, exitDateDefault }: ReservationOfDatePickerProps) {
+  const [arrivalDate, setArrivalDate] = useState<Dayjs | null>(arrivalDateDefault || null);
+  const [exitDate, setExitDate] = useState<Dayjs | null>(exitDateDefault || null);
   const [exitDateError, setExitDateError] = useState<DateValidationError | null>(null);
 
   const exitMinDate = arrivalDate ? arrivalDate.add(1, 'day') : dayjs().add(1, 'day');

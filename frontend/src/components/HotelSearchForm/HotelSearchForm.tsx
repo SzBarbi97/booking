@@ -4,8 +4,10 @@ import { ParamKeyValuePair } from 'react-router-dom/dist/dom';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { Button, FormControl, InputLabel, MenuItem, Select, TextField } from '@mui/material';
+import dayjs from 'dayjs';
 import { getHotelCountries } from '../../api/hotel';
 import { useMobileView } from '../../hooks';
+import { CountryPickerProps, NumberOfAdultsProps, NumberOfChildrenProps } from '../../model/interfaces/props';
 import { ReservationOfDatePicker } from '../ReservationOfDatePicker/ReservationOfDatePicker';
 import styles from './HotelSearchForm.module.scss';
 
@@ -19,6 +21,10 @@ export function HotelSearchForm() {
   const [searchParams] = useSearchParams();
 
   const countrySearchParam = searchParams.get('country');
+  const arrivalDateSearchParam = searchParams.get('arrivalDate');
+  const exitDateSearchParam = searchParams.get('exitDate');
+  const adultsSearchParam = searchParams.get('numberOfAdults');
+  const childrenSearchParam = searchParams.get('numberOfChildren');
 
   useEffect(() => {
     getHotelCountries().then((response) => {
@@ -31,30 +37,30 @@ export function HotelSearchForm() {
     const formData = new FormData(event.target as HTMLFormElement);
 
     const queryParams: ParamKeyValuePair[] = [];
-    const country = formData.get('select-country');
-    const adults = formData.get('number-of-adults');
-    const children = formData.get('number-of-children');
-    const arrival = formData.get('arrival-date');
-    const exit = formData.get('exit-date');
+    const country = formData.get('country');
+    const arrivalDate = formData.get('arrival-date');
+    const exitDate = formData.get('exit-date');
+    const numberOfAdults = formData.get('number-of-adults');
+    const numberOfChildren = formData.get('number-of-children');
 
     if (country) {
       queryParams.push(['country', country.toString()]);
     }
 
-    if (adults) {
-      queryParams.push(['adults', adults.toString()]);
+    if (arrivalDate) {
+      queryParams.push(['arrivalDate', arrivalDate.toString()]);
     }
 
-    if (children) {
-      queryParams.push(['children', children.toString()]);
+    if (exitDate) {
+      queryParams.push(['exitDate', exitDate.toString()]);
     }
 
-    if (arrival) {
-      queryParams.push(['arrival', arrival.toString()]);
+    if (numberOfAdults) {
+      queryParams.push(['numberOfAdults', numberOfAdults.toString()]);
     }
 
-    if (exit) {
-      queryParams.push(['exit', exit.toString()]);
+    if (numberOfChildren) {
+      queryParams.push(['numberOfChildren', numberOfChildren.toString()]);
     }
 
     navigate({
@@ -78,27 +84,16 @@ export function HotelSearchForm() {
       {!mobileView || showSearch ? (
         <div className={styles.bookingSearchFormContainer}>
           <form className={styles.bookingSearchForm} onSubmit={handleSubmit}>
-            <FormControl className={styles.country} defaultValue={''}>
-              <InputLabel id="country">Helyszín</InputLabel>
-              <Select id="select-country" name="select-country" labelId="country" label="Helyszín" defaultValue="">
-                <MenuItem className={styles.countryMenuItem} value="" />
-                {countries.map((country) => (
-                  <MenuItem key={country} value={country} selected={country === countrySearchParam}>
-                    {country}
-                  </MenuItem>
-                ))}
-              </Select>
-            </FormControl>
+            <CountryPicker countries={countries} countryDefault={countrySearchParam || undefined} />
 
-            <ReservationOfDatePicker />
+            <ReservationOfDatePicker
+              arrivalDateDefault={arrivalDateSearchParam ? dayjs(arrivalDateSearchParam) : undefined}
+              exitDateDefault={exitDateSearchParam ? dayjs(exitDateSearchParam) : undefined}
+            />
 
-            <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
-              <TextField id="number-of-adults" name="number-of-adults" label="Felnőttek" type="number" />
-            </FormControl>
+            <NumberOfAdultsPicker numberOfAdultsDefault={adultsSearchParam ? adultsSearchParam : undefined} />
 
-            <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
-              <TextField id="number-of-children" name="number-of-children" label="Gyerekek" type="number" />
-            </FormControl>
+            <NumberOfChildrenPicker numberOfChildrenDefault={childrenSearchParam ? childrenSearchParam : undefined} />
 
             <Button className={styles.searchButton} sx={{ minWidth: 150 }} type="submit" variant="contained">
               Keresés
@@ -106,6 +101,67 @@ export function HotelSearchForm() {
           </form>
         </div>
       ) : null}
+    </>
+  );
+}
+
+function CountryPicker({ countries, countryDefault }: CountryPickerProps) {
+  const [selectedCountry, setSelectedCountry] = useState(countryDefault || '');
+
+  return (
+    <>
+      <FormControl className={styles.country}>
+        <InputLabel id="country-label">Helyszín</InputLabel>
+        <Select
+          name="country"
+          labelId="country-label"
+          label="Helyszín"
+          value={selectedCountry}
+          onChange={(event) => setSelectedCountry(event.target.value)}>
+          <MenuItem className={styles.countryMenuItem} value="" />
+          {countries.map((country) => (
+            <MenuItem key={country} value={country}>
+              {country}
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
+    </>
+  );
+}
+
+function NumberOfAdultsPicker({ numberOfAdultsDefault }: NumberOfAdultsProps) {
+  const [adultsNumber, setAdultsNumber] = useState(numberOfAdultsDefault || '');
+
+  return (
+    <>
+      <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
+        <TextField
+          name="number-of-adults"
+          label="Felnőttek"
+          type="number"
+          value={adultsNumber}
+          onChange={(event) => setAdultsNumber(event.target.value)}
+        />
+      </FormControl>
+    </>
+  );
+}
+
+function NumberOfChildrenPicker({ numberOfChildrenDefault }: NumberOfChildrenProps) {
+  const [childrenNumber, setChildrenNumber] = useState(numberOfChildrenDefault || '');
+
+  return (
+    <>
+      <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
+        <TextField
+          name="number-of-children"
+          label="Gyerekek"
+          type="number"
+          value={childrenNumber}
+          onChange={(event) => setChildrenNumber(event.target.value)}
+        />
+      </FormControl>
     </>
   );
 }
