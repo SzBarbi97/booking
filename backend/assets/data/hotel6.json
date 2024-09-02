@@ -30,5 +30,7 @@
   "coordinate": {
     "latitude": 53.91664529335558,
     "longitude": 14.26403882734604
-  }
+  },
+  "maxAdults": 4,
+  "maxChildren": 4
 }

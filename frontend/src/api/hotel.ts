@@ -6,8 +6,9 @@ export function getHotelCountries(): Promise<AxiosResponse<string[]>> {
   return axios.get<string[]>('hotels/countries');
 }
 
-export function getHotels(): Promise<AxiosResponse<HotelListItem[]>> {
-  return axios.get<HotelListItem[]>('hotels');
+export function getHotels(searchParams?: string): Promise<AxiosResponse<HotelListItem[]>> {
+  const searchSuffix = searchParams ? `?${searchParams}` : '';
+  return axios.get<HotelListItem[]>('hotels' + searchSuffix);
 }
 
 export function getHotel(id: string): Promise<AxiosResponse<Hotel>> {

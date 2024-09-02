@@ -52,7 +52,7 @@
   }
 }
 
-.location {
+.country {
   width: 100%;
 
   @include max-width(lg) {
@@ -60,7 +60,7 @@
   }
 }
 
-.locationMenuItem {
+.countryMenuItem {
   min-height: 36px !important;
 }
 
@@ -89,7 +89,8 @@
   }
 }
 
-
-
-
-
+.errorTooltip:global.MuiButtonBase-root.MuiIconButton-root {
+  position: absolute;
+  right: -15px;
+  top: -15px;
+}

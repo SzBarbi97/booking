@@ -68,6 +68,20 @@
     "country": "Horvátország",
     "price": "7500",
     "mainImageUrl": "http://localhost:3001/images/hotel10.png"
+  },
+  {
+    "id": "hotel11",
+    "title": "Eger hotel",
+    "country": "Magyarország",
+    "price": "19500",
+    "mainImageUrl": "http://localhost:3001/images/hotel11.png"
+  },
+  {
+    "id": "hotel12",
+    "title": "Debrecen hotel",
+    "country": "Magyarország",
+    "price": "20500",
+    "mainImageUrl": "http://localhost:3001/images/hotel12.png"
   }
 ]
 

@@ -11,4 +11,6 @@ export interface HotelListItem extends BaseHotel {}
 export interface Hotel extends BaseHotel {
   location: string;
   imageUrls: string[];
+  maxAdults: number;
+  maxChildren: number;
 }
