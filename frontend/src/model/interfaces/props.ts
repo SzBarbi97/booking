@@ -61,3 +61,11 @@ export interface NumberOfAdultsProps {
 export interface NumberOfChildrenProps {
   numberOfChildrenDefault?: string;
 }
+
+export interface HotelSpokenLanguageListProps {
+  languages: string[];
+}
+
+export interface HotelAttractionListProps {
+  attractions: string[];
+}

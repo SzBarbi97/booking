@@ -13,6 +13,8 @@ export interface Hotel extends BaseHotel {
   imageUrls: string[];
   description: string;
   services: string[];
+  languages: string[];
+  attractions: string[];
   coordinate: Coordinate;
 }
 
