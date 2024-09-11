@@ -45,7 +45,7 @@ export function HotelService({ service }: HotelServiceProps) {
       break;
     case 'WELLNESS_CENTER':
       ServiceIcon = SpaIcon;
-      serviceName = 'Welness központ';
+      serviceName = 'Wellness központ';
       break;
   }
 

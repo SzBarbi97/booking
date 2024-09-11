@@ -1,27 +1,31 @@
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardMedia } from '@mui/material';
+import React, { useState } from 'react';
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
 import { HotelListProps } from '../../model/interfaces/props';
-import { cn } from '../../utils';
-import { formatNumberByThousand } from '../../utils/format';
+import { HotelListDefaultView } from '../HotelListDefaultView/HotelListDefaultView';
+import { HotelListListView } from '../HotelListListView/HotelListListView';
 import styles from './HotelList.module.scss';
 
 export function HotelList({ hotels }: HotelListProps) {
+  const [view, setView] = useState('default');
+
+  const hotelListView = (event: React.MouseEvent<HTMLElement>, newView: string | null) => {
+    if (newView) {
+      setView(newView);
+    }
+  };
+
   return (
     <div className={styles.hotelListContainer}>
-      {hotels.map((hotel) => (
-        <Link key={hotel.id} to={hotel.id}>
-          <Card className={styles.hotelCard}>
-            <CardMedia component="img" height="250" src={hotel.mainImageUrl} alt={hotel.title} />
+      <ToggleButtonGroup value={view} exclusive onChange={hotelListView} className={styles.toggleButtonGroup}>
+        <ToggleButton value="default" className={styles.toggleButton}>
+          Rács
+        </ToggleButton>
+        <ToggleButton value="list" className={styles.toggleButton}>
+          Lista
+        </ToggleButton>
+      </ToggleButtonGroup>
 
-            <p className={styles.hotelPrice}>Szoba: {formatNumberByThousand(hotel.price)} Ft-tól</p>
-
-            <CardContent className={styles.cardContent}>
-              <h3 className="margin-0">{hotel.country}</h3>
-              <p className={cn(styles.hotelName, 'margin-0')}>{hotel.title}</p>
-            </CardContent>
-          </Card>
-        </Link>
-      ))}
+      {view === 'default' ? <HotelListDefaultView hotels={hotels} /> : <HotelListListView hotels={hotels} />}
     </div>
   );
 }

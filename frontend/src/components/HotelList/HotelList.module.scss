@@ -1,38 +1,23 @@
 .hotelListContainer {
   display: flex;
-  max-width: var(--content-max-width);
-  flex-wrap: wrap;
-  margin: 50px auto;
-  justify-content: center;
+  flex-direction: column;
+  max-width: 1000px;
+  margin: 50px auto 0 auto;
 }
 
-.hotelCard {
-  width: 300px;
-  height: 320px;
-  margin: 10px;
-  position: relative;
-
-  &:hover {
-    box-shadow: 5px 5px 10px black;
-    cursor: pointer;
-  }
+.toggleButtonGroup:global.MuiToggleButtonGroup-root {
+  justify-content: flex-end;
 }
 
-.hotelPrice {
-  position: absolute;
-  top: 170px;
-  background: rgba(102, 76, 40, 0.8);
+.toggleButton:global.MuiButtonBase-root.MuiToggleButton-root {
+  text-transform: capitalize;
+  line-height: normal;
+  letter-spacing: normal;
+  font-size: small;
+}
+
+.toggleButton:global.MuiButtonBase-root.MuiToggleButton-root.Mui-selected {
   color: white;
-  padding: 5px 20px;
-  width: 260px;
-  height: 25px;
-  font-weight: bold;
-}
-
-.cardContent:last-child {
-  padding: 0 0 0 20px;
-
-  .hotelName {
-    font-size: 12px;
-  }
+  //background-color: var(--primary-color);
+  background: rgba(102, 76, 40, 0.8);
 }

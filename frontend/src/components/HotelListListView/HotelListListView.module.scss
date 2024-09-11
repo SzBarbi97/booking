@@ -1,0 +1,89 @@
+.hotelListContainer {
+  max-width: var(--content-max-width);
+  margin: 50px auto;
+  justify-content: center;
+}
+
+.hotelCard {
+  width: 1000px;
+  height: 250px;
+  display: flex;
+  margin: 20px auto;
+
+  &:hover {
+    box-shadow: 5px 5px 10px black;
+    cursor: pointer;
+  }
+}
+
+.cardMedia:global.MuiCardMedia-root {
+  width: 250px;
+  height: 250px;
+  border-radius: 5px;
+}
+
+.cardContent {
+  width: 800px;
+}
+
+.rating:global.MuiRating-root {
+  font-size: 1rem;
+}
+
+.userRatingContainer {
+  float: right;
+  display: flex;
+}
+
+.userRatingNumber {
+  margin-right: 10px;
+  font-size: 12px;
+}
+
+.circularProgressContainer {
+  display: block;
+}
+
+.circularProgressBox {
+  position: relative;
+  display: inline-flex;
+}
+
+.circularProgressNumberBox {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userRatingExcellent:global.MuiCircularProgress-root {
+  color: #006400;
+}
+
+.userRatingVeryGood:global.MuiCircularProgress-root {
+  color: #2e8b57;
+}
+
+.userRatingGood:global.MuiCircularProgress-root {
+  color: #ffa500;
+}
+
+.userRatingPleasing:global.MuiCircularProgress-root {
+  color: #cd5c5c;
+}
+
+.userRatingNotGood:global.MuiCircularProgress-root {
+  color: #b22222
+}
+
+.hotelPriceInformationContainer {
+  float: right;
+}
+
+.hotelPrice {
+  font-weight: bold;
+}
