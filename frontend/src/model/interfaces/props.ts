@@ -79,3 +79,8 @@ export interface HotelSpokenLanguageListProps {
 export interface HotelAttractionListProps {
   attractions: string[];
 }
+
+export interface UserRatingProps {
+  userRating: number;
+  userRatingNumber: number;
+}

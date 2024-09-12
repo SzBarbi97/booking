@@ -31,56 +31,6 @@
   font-size: 1rem;
 }
 
-.userRatingContainer {
-  float: right;
-  display: flex;
-}
-
-.userRatingNumber {
-  margin-right: 10px;
-  font-size: 12px;
-}
-
-.circularProgressContainer {
-  display: block;
-}
-
-.circularProgressBox {
-  position: relative;
-  display: inline-flex;
-}
-
-.circularProgressNumberBox {
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.userRatingExcellent:global.MuiCircularProgress-root {
-  color: #006400;
-}
-
-.userRatingVeryGood:global.MuiCircularProgress-root {
-  color: #2e8b57;
-}
-
-.userRatingGood:global.MuiCircularProgress-root {
-  color: #ffa500;
-}
-
-.userRatingPleasing:global.MuiCircularProgress-root {
-  color: #cd5c5c;
-}
-
-.userRatingNotGood:global.MuiCircularProgress-root {
-  color: #b22222
-}
-
 .hotelServiceIconAndPriceContainer {
   display: flex;
   justify-content: space-between;
