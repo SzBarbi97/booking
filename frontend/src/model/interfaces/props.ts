@@ -40,6 +40,8 @@ export interface HotelServiceProps {
   service: string;
 }
 
+export type HotelServiceIconProps = HotelServiceProps;
+
 export interface MapProps {
   coordinate: Coordinate;
   popupDescription: string;

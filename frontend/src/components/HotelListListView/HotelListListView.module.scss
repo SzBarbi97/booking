@@ -24,6 +24,7 @@
 
 .cardContent {
   width: 800px;
+  margin: auto;
 }
 
 .rating:global.MuiRating-root {
@@ -80,10 +81,14 @@
   color: #b22222
 }
 
-.hotelPriceInformationContainer {
-  float: right;
+.hotelServiceIconAndPriceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 
 .hotelPrice {
   font-weight: bold;
+  margin: 0;
 }
+

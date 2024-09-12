@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { Box, Card, CardContent, CardMedia, CircularProgress, Rating } from '@mui/material';
 import { HotelListListViewItemProps, HotelListListViewProps } from '../../model/interfaces/props';
 import { formatNumberByThousand } from '../../utils/format';
+import { HotelServiceIcon } from '../HotelServiceIcon/HotelServiceIcon';
 import styles from './HotelListListView.module.scss';
-import { HotelService } from '../HotelService/HotelService';
 
 export function HotelListListView({ hotels }: HotelListListViewProps) {
   return (
@@ -53,17 +53,18 @@ function HotelListListViewItem({ hotel }: HotelListListViewItemProps) {
           </h3>
           <p>{hotel.country}</p>
 
-          <div>
-            {hotel.services.map((service) => (
-              <HotelService key={service} service={service} />
-            ))}
-          </div>
+          <div className={styles.hotelServiceIconAndPriceContainer}>
+            <div>
+              {hotel.services.map((service) => (
+                <HotelServiceIcon key={service} service={service} />
+              ))}
+            </div>
 
-          <div className={styles.hotelPriceInformationContainer}>
-            <p>1 éjszaka / 2 felnőtt</p>
-            <p className={styles.hotelPrice}>Szoba: {formatNumberByThousand(hotel.price)} Ft-tól</p>
+            <div>
+              <p>1 éjszaka / 2 felnőtt</p>
+              <p className={styles.hotelPrice}>Szoba: {formatNumberByThousand(hotel.price)} Ft-tól</p>
+            </div>
           </div>
-
         </CardContent>
       </Card>
     </Link>
