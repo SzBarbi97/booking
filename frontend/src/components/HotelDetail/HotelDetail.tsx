@@ -21,23 +21,32 @@ export function HotelDetail({ hotel }: HotelDetailProps) {
         </Button>
       </Link>
 
-      <div>
-        <UserRating userRating={hotel.userRating} userRatingNumber={hotel.userRatingNumber} />
+      <div className={styles.container}>
+        <div className={styles.leftContainer}>
+          <div className={styles.hotelTitleAndRatingContainer}>
+            <UserRating userRating={hotel.userRating} userRatingNumber={hotel.userRatingNumber} />
 
-        <h1>
-          {hotel.title} <Rating value={hotel.rating} readOnly />
-        </h1>
-        <p className={styles.location}>
-          <LocationOnIcon />
-          {hotel.location} ({hotel.country})
-        </p>
+            <h1 className={styles.hotelTitle}>
+              {hotel.title} <Rating value={hotel.rating} readOnly />
+            </h1>
+          </div>
+
+          <p className={styles.location}>
+            <LocationOnIcon />
+            {hotel.location} ({hotel.country})
+          </p>
+
+          <ImageGallery mainImageUrl={hotel.mainImageUrl} imageUrls={hotel.imageUrls} />
+        </div>
+
+        <div>
+          <HotelServiceList services={hotel.services} />
+          <HotelSpokenLanguages languages={hotel.languages} />
+          <HotelAttractions attractions={hotel.attractions} />
+        </div>
       </div>
 
-      <ImageGallery mainImageUrl={hotel.mainImageUrl} imageUrls={hotel.imageUrls} />
       <HotelDescription hotel={hotel} />
-      <HotelServiceList services={hotel.services} />
-      <HotelSpokenLanguages languages={hotel.languages} />
-      <HotelAttractions attractions={hotel.attractions} />
 
       <Map
         className={styles.hotelMap}

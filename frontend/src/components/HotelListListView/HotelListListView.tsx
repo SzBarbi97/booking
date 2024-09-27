@@ -23,15 +23,18 @@ function HotelListListViewItem({ hotel }: HotelListListViewItemProps) {
         <CardMedia className={styles.cardMedia} component="img" src={hotel.mainImageUrl} alt={hotel.title} />
 
         <CardContent className={styles.cardContent}>
-          <UserRating userRating={hotel.userRating} userRatingNumber={hotel.userRatingNumber} />
+          <div className={styles.hotelTitleAndRatingContainer}>
+            <h3>
+              {hotel.title} <Rating className={styles.rating} value={hotel.rating} readOnly />
+            </h3>
 
-          <h3>
-            {hotel.title} <Rating className={styles.rating} value={hotel.rating} readOnly />
-          </h3>
-          <p>{hotel.country}</p>
+            <UserRating userRating={hotel.userRating} userRatingNumber={hotel.userRatingNumber} />
+          </div>
+
+          <p className={styles.country}>{hotel.country}</p>
 
           <div className={styles.hotelServiceIconAndPriceContainer}>
-            <div>
+            <div className={styles.serviceIconContainer}>
               {hotel.services.map((service) => (
                 <HotelServiceIcon key={service} service={service} />
               ))}

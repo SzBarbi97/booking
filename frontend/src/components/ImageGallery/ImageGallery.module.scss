@@ -8,6 +8,10 @@
   width: 400px;
   cursor: pointer;
   flex-direction: column;
+
+  @include max-width(sm) {
+    width: 100%;
+  }
 }
 
 .mainImage {

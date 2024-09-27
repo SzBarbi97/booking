@@ -28,7 +28,7 @@ export function ReservationOfDatePicker({ arrivalDateDefault, exitDateDefault }:
 
   return (
     <>
-      <FormControl className={styles.dateInput} sx={{ minWidth: 150 }}>
+      <FormControl className={styles.dateInput}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
             label="Érkezés"
@@ -41,7 +41,7 @@ export function ReservationOfDatePicker({ arrivalDateDefault, exitDateDefault }:
         </LocalizationProvider>
       </FormControl>
 
-      <FormControl className={styles.dateInput} sx={{ minWidth: 150 }}>
+      <FormControl className={styles.dateInput}>
         <LocalizationProvider dateAdapter={AdapterDayjs}>
           <DatePicker
             label="Távozás"

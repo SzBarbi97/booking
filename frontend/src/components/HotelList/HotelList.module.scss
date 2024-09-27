@@ -1,3 +1,5 @@
+@use "../../assets/scss/mixin/breakpoints" as *;
+
 .hotelListContainer {
   display: flex;
   flex-direction: column;
@@ -7,6 +9,10 @@
 
 .toggleButtonGroup:global.MuiToggleButtonGroup-root {
   justify-content: flex-end;
+
+  @include max-width(lg) {
+    justify-content: center;
+  }
 }
 
 .toggleButton:global.MuiButtonBase-root.MuiToggleButton-root {
@@ -18,6 +24,5 @@
 
 .toggleButton:global.MuiButtonBase-root.MuiToggleButton-root.Mui-selected {
   color: white;
-  //background-color: var(--primary-color);
   background: rgba(102, 76, 40, 0.8);
 }

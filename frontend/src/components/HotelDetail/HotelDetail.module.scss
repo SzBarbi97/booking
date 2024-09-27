@@ -20,6 +20,20 @@
   text-transform: none;
 }
 
+.container {
+  display: flex;
+  column-gap: 50px;
+  margin: 25px 0 25px 0;
+
+  @include max-width(lg) {
+    display: block;
+  }
+}
+
+.hotelTitle {
+  margin: 0;
+}
+
 .location {
   display: flex;
   align-items: center;
@@ -27,4 +41,10 @@
 
 .hotelMap {
   height: 400px;
+}
+
+.leftContainer {
+  @include max-width(lg) {
+    display: inline-block;
+  }
 }
