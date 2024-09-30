@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import { Card, CardContent, CardMedia, Rating } from '@mui/material';
-import { HotelListDefaultViewProps } from '../../model/interfaces/props';
+import { HotelListGridViewProps } from '../../model/interfaces/props';
 import { formatNumberByThousand } from '../../utils/format';
-import styles from './HotelListDefaultView.module.scss';
+import styles from './HotelListGridView.module.scss';
 
-export function HotelListDefaultView({ hotels }: HotelListDefaultViewProps) {
+export function HotelListGridView({ hotels }: HotelListGridViewProps) {
   return (
     <div className={styles.hotelListContainer}>
       {hotels.map((hotel) => (

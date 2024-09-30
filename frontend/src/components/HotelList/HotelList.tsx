@@ -1,23 +1,17 @@
-import React, { useState } from 'react';
 import { ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { useHotelListView } from '../../hooks/useHotelListView';
 import { HotelListProps } from '../../model/interfaces/props';
-import { HotelListDefaultView } from '../HotelListDefaultView/HotelListDefaultView';
+import { HotelListGridView } from '../HotelListGridView/HotelListGridView';
 import { HotelListListView } from '../HotelListListView/HotelListListView';
 import styles from './HotelList.module.scss';
 
 export function HotelList({ hotels }: HotelListProps) {
-  const [view, setView] = useState('default');
-
-  const hotelListView = (event: React.MouseEvent<HTMLElement>, newView: string | null) => {
-    if (newView) {
-      setView(newView);
-    }
-  };
+  const [view, setView] = useHotelListView();
 
   return (
     <div className={styles.hotelListContainer}>
-      <ToggleButtonGroup value={view} exclusive onChange={hotelListView} className={styles.toggleButtonGroup}>
-        <ToggleButton value="default" className={styles.toggleButton}>
+      <ToggleButtonGroup value={view} exclusive onChange={setView} className={styles.toggleButtonGroup}>
+        <ToggleButton value="grid" className={styles.toggleButton}>
           Rács
         </ToggleButton>
         <ToggleButton value="list" className={styles.toggleButton}>
@@ -25,7 +19,7 @@ export function HotelList({ hotels }: HotelListProps) {
         </ToggleButton>
       </ToggleButtonGroup>
 
-      {view === 'default' ? <HotelListDefaultView hotels={hotels} /> : <HotelListListView hotels={hotels} />}
+      {view === 'grid' ? <HotelListGridView hotels={hotels} /> : <HotelListListView hotels={hotels} />}
     </div>
   );
 }

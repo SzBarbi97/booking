@@ -5,7 +5,7 @@ export interface HotelListProps {
   hotels: HotelListItem[];
 }
 
-export type HotelListDefaultViewProps = HotelListProps;
+export type HotelListGridViewProps = HotelListProps;
 
 export type HotelListListViewProps = HotelListProps;
 
