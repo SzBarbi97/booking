@@ -4,6 +4,10 @@ export interface BaseHotel {
   country: string;
   price: number;
   mainImageUrl: string;
+  services: string[];
+  rating: number;
+  userRatingNumber: number;
+  userRating: number;
 }
 
 export type HotelListItem = BaseHotel;
@@ -12,7 +16,6 @@ export interface Hotel extends BaseHotel {
   location: string;
   imageUrls: string[];
   description: string;
-  services: string[];
   languages: string[];
   attractions: string[];
   coordinate: Coordinate;

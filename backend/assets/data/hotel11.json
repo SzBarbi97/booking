@@ -34,5 +34,8 @@
     "longitude": 20.3737449
   },
   "maxAdults": 10,
-  "maxChildren": 10
+  "maxChildren": 10,
+  "rating": 4.8,
+  "userRatingNumber": 1584,
+  "userRating": 9.8
 }

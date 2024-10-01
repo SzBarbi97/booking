@@ -5,6 +5,14 @@ export interface HotelListProps {
   hotels: HotelListItem[];
 }
 
+export type HotelListGridViewProps = HotelListProps;
+
+export type HotelListListViewProps = HotelListProps;
+
+export interface HotelListListViewItemProps {
+  hotel: HotelListItem;
+}
+
 export interface HotelDescriptionProps {
   hotel: Hotel;
 }
@@ -31,6 +39,8 @@ export interface HotelServiceListProps {
 export interface HotelServiceProps {
   service: string;
 }
+
+export type HotelServiceIconProps = HotelServiceProps;
 
 export interface MapProps {
   coordinate: Coordinate;
@@ -68,4 +78,9 @@ export interface HotelSpokenLanguageListProps {
 
 export interface HotelAttractionListProps {
   attractions: string[];
+}
+
+export interface UserRatingProps {
+  userRating: number;
+  userRatingNumber: number;
 }

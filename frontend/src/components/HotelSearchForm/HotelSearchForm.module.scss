@@ -80,6 +80,10 @@
   }
 }
 
+.numberInput:global.MuiFormControl-root {
+  min-width: 120px;
+}
+
 .searchButton {
   width: 150px;
   height: 56px;

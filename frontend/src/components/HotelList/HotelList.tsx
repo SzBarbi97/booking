@@ -1,27 +1,25 @@
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardMedia } from '@mui/material';
+import { ToggleButton, ToggleButtonGroup } from '@mui/material';
+import { useHotelListView } from '../../hooks/useHotelListView';
 import { HotelListProps } from '../../model/interfaces/props';
-import { cn } from '../../utils';
-import { formatNumberByThousand } from '../../utils/format';
+import { HotelListGridView } from '../HotelListGridView/HotelListGridView';
+import { HotelListListView } from '../HotelListListView/HotelListListView';
 import styles from './HotelList.module.scss';
 
 export function HotelList({ hotels }: HotelListProps) {
+  const [view, setView] = useHotelListView();
+
   return (
     <div className={styles.hotelListContainer}>
-      {hotels.map((hotel) => (
-        <Link key={hotel.id} to={hotel.id}>
-          <Card className={styles.hotelCard}>
-            <CardMedia component="img" height="250" src={hotel.mainImageUrl} alt={hotel.title} />
+      <ToggleButtonGroup value={view} exclusive onChange={setView} className={styles.toggleButtonGroup}>
+        <ToggleButton value="grid" className={styles.toggleButton}>
+          Rács
+        </ToggleButton>
+        <ToggleButton value="list" className={styles.toggleButton}>
+          Lista
+        </ToggleButton>
+      </ToggleButtonGroup>
 
-            <p className={styles.hotelPrice}>Szoba: {formatNumberByThousand(hotel.price)} Ft-tól</p>
-
-            <CardContent className={styles.cardContent}>
-              <h3 className="margin-0">{hotel.country}</h3>
-              <p className={cn(styles.hotelName, 'margin-0')}>{hotel.title}</p>
-            </CardContent>
-          </Card>
-        </Link>
-      ))}
+      {view === 'grid' ? <HotelListGridView hotels={hotels} /> : <HotelListListView hotels={hotels} />}
     </div>
   );
 }

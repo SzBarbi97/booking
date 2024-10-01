@@ -1,0 +1,104 @@
+@use "../../assets/scss/mixin/breakpoints" as *;
+
+.hotelListContainer {
+  max-width: var(--content-max-width);
+  margin: 50px auto;
+  justify-content: center;
+
+  @include max-width(lg) {
+    max-width: 100%;
+  }
+
+  @include max-width(lg) {
+    margin: 50px 10px;
+  }
+}
+
+.hotelCard {
+  width: 1000px;
+  height: 250px;
+  display: flex;
+  margin: 20px auto;
+
+  &:hover {
+    box-shadow: 5px 5px 10px black;
+    cursor: pointer;
+  }
+
+  @include max-width(lg) {
+    width: 100%;
+    height: auto;
+  }
+
+  @include max-width(sm) {
+    flex-direction: column;
+  }
+}
+
+.cardMedia:global.MuiCardMedia-root {
+  width: 250px;
+  height: 250px;
+
+  @include max-width(md) {
+    width: 150px;
+    height: auto;
+  }
+
+  @include max-width(sm) {
+    width: 100%;
+    height: 300px;
+  }
+}
+
+.cardContent {
+  width: 800px;
+  margin: auto;
+
+  @include max-width(sm) {
+    width: 100%;
+  }
+
+  > * {
+    padding: 0 10px 0 10px;
+  }
+}
+
+.cardContent:global.MuiCardContent-root {
+  @include max-width(sm) {
+    padding: 0;
+  }
+}
+
+.hotelTitleAndRatingContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating:global.MuiRating-root {
+  font-size: 1rem;
+}
+
+.hotelServiceIconAndPriceContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.country {
+  @include max-width(sm) {
+    margin: 0;
+  }
+}
+
+.serviceIconContainer {
+  @include max-width(sm) {
+    max-width: 50%;
+  }
+}
+
+.hotelPrice {
+  font-weight: bold;
+  margin: 0;
+}
+

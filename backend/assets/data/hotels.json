@@ -4,84 +4,206 @@
     "title": "Njivice hotel",
     "country": "Horvátország",
     "price": "10000",
-    "mainImageUrl": "http://localhost:3001/images/hotel1.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel1.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "NO_SMOKING",
+      "BAR",
+      "FITNESS_CENTER",
+      "WELLNESS_CENTER"
+    ],
+    "rating": 2,
+    "userRatingNumber": 1234,
+    "userRating": 5.3
   },
   {
     "id": "hotel2",
     "title": "Balatonszemes hotel",
     "country": "Magyarország",
     "price": "15000",
-    "mainImageUrl": "http://localhost:3001/images/hotel2.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel2.png",
+    "services": [
+      "FREE_PARKING",
+      "ANIMAL_FRIENDLY",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "BAR"
+    ],
+    "rating": 3,
+    "userRatingNumber": 1165,
+    "userRating": 7.6
   },
   {
     "id": "hotel3",
     "title": "Budapest hotel",
     "country": "Magyarország",
     "price": "17000",
-    "mainImageUrl": "http://localhost:3001/images/hotel3.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel3.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "NO_SMOKING",
+      "WELLNESS_CENTER"
+    ],
+    "rating": 3.4,
+    "userRatingNumber": 984,
+    "userRating": 9.1
   },
   {
     "id": "hotel4",
     "title": "Siófok hotel",
     "country": "Magyarország",
     "price": "18500",
-    "mainImageUrl": "http://localhost:3001/images/hotel4.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel4.png",
+    "services": [
+      "FREE_PARKING",
+      "ANIMAL_FRIENDLY",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "FITNESS_CENTER",
+      "WELLNESS_CENTER"
+    ],
+    "rating": 3.8,
+    "userRatingNumber": 879,
+    "userRating": 8.7
   },
   {
     "id": "hotel5",
     "title": "Chirițeni hotel",
     "country": "Románia",
     "price": "23000",
-    "mainImageUrl": "http://localhost:3001/images/hotel5.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel5.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "BAR",
+      "FITNESS_CENTER"
+    ],
+    "rating": 4.5,
+    "userRatingNumber": 1567,
+    "userRating": 9.8
   },
   {
     "id": "hotel6",
     "title": "Świnoujście hotel",
     "country": "Lengyelország",
     "price": "20000",
-    "mainImageUrl": "http://localhost:3001/images/hotel6.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel6.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "NO_SMOKING"
+    ],
+    "rating": 4,
+    "userRatingNumber": 1301,
+    "userRating": 9.0
   },
   {
     "id": "hotel7",
     "title": "Sužan hotel",
     "country": "Horvátország",
     "price": "16500",
-    "mainImageUrl": "http://localhost:3001/images/hotel7.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel7.png",
+    "services": [
+      "FREE_PARKING",
+      "ANIMAL_FRIENDLY",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "WELLNESS_CENTER"
+    ],
+    "rating": 4,
+    "userRatingNumber": 1205,
+    "userRating": 6.8
   },
   {
     "id": "hotel8",
     "title": "Hulín hotel",
     "country": "Csehország",
     "price": "4500",
-    "mainImageUrl": "http://localhost:3001/images/hotel8.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel8.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "FITNESS_CENTER"
+    ],
+    "rating": 3,
+    "userRatingNumber": 1100,
+    "userRating": 7.0
   },
   {
     "id": "hotel9",
     "title": "Donovaly hotel",
     "country": "Szlovákia",
     "price": "8000",
-    "mainImageUrl": "http://localhost:3001/images/hotel9.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel9.png",
+    "services": [
+      "FREE_PARKING",
+      "ANIMAL_FRIENDLY",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "BAR",
+      "WELLNESS_CENTER"
+    ],
+    "rating": 3.5,
+    "userRatingNumber": 2167,
+    "userRating": 7.7
   },
   {
     "id": "hotel10",
     "title": "Bibinje hotel",
     "country": "Horvátország",
     "price": "7500",
-    "mainImageUrl": "http://localhost:3001/images/hotel10.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel10.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "NO_SMOKING",
+      "FITNESS_CENTER"
+    ],
+    "rating": 4.5,
+    "userRatingNumber": 1904,
+    "userRating": 9.4
   },
   {
     "id": "hotel11",
     "title": "Eger hotel",
     "country": "Magyarország",
     "price": "19500",
-    "mainImageUrl": "http://localhost:3001/images/hotel11.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel11.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "NO_SMOKING",
+      "FITNESS_CENTER"
+    ],
+    "rating": 4.8,
+    "userRatingNumber": 1584,
+    "userRating": 9.8
   },
   {
     "id": "hotel12",
     "title": "Debrecen hotel",
     "country": "Magyarország",
     "price": "20500",
-    "mainImageUrl": "http://localhost:3001/images/hotel12.png"
+    "mainImageUrl": "http://localhost:3001/images/hotel12.png",
+    "services": [
+      "FREE_PARKING",
+      "FREE_WIFI",
+      "OWN_RESTAURANT",
+      "NO_SMOKING",
+      "FITNESS_CENTER"
+    ],
+    "rating": 4.4,
+    "userRatingNumber": 1176,
+    "userRating": 9.2
   }
 ]
 

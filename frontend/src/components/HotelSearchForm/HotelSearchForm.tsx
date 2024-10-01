@@ -138,7 +138,7 @@ function NumberOfAdultsPicker({ numberOfAdultsDefault }: NumberOfAdultsProps) {
 
   return (
     <>
-      <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
+      <FormControl className={styles.numberInput}>
         <TextField
           name="number-of-adults"
           label="Felnőttek"
@@ -165,7 +165,7 @@ function NumberOfChildrenPicker({ numberOfChildrenDefault }: NumberOfChildrenPro
 
   return (
     <>
-      <FormControl className={styles.numberInput} sx={{ minWidth: 120 }}>
+      <FormControl className={styles.numberInput}>
         <TextField
           name="number-of-children"
           label="Gyerekek"
