@@ -7,6 +7,7 @@ import dayjs, { Dayjs } from 'dayjs';
 import { ReservationOfDatePickerProps } from '../../model/interfaces/props';
 import { ErrorTooltip } from '../ErrorTooltip/ErrorTooltip';
 import styles from './ReservationOfDatePicker.module.scss';
+import 'dayjs/locale/hu';
 
 export function ReservationOfDatePicker({ arrivalDateDefault, exitDateDefault }: ReservationOfDatePickerProps) {
   const [arrivalDate, setArrivalDate] = useState<Dayjs | null>(arrivalDateDefault || null);
@@ -29,7 +30,7 @@ export function ReservationOfDatePicker({ arrivalDateDefault, exitDateDefault }:
   return (
     <>
       <FormControl className={styles.dateInput}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="hu">
           <DatePicker
             label="Érkezés"
             name="arrival-date"
@@ -42,7 +43,7 @@ export function ReservationOfDatePicker({ arrivalDateDefault, exitDateDefault }:
       </FormControl>
 
       <FormControl className={styles.dateInput}>
-        <LocalizationProvider dateAdapter={AdapterDayjs}>
+        <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale="hu">
           <DatePicker
             label="Távozás"
             name="exit-date"

@@ -7,22 +7,59 @@
   margin: 50px auto 0 auto;
 }
 
-.toggleButtonGroup:global.MuiToggleButtonGroup-root {
-  justify-content: flex-end;
+.hotelListOrderAndViewContainer {
+  display: flex;
+  justify-content: space-between;
 
   @include max-width(lg) {
-    justify-content: center;
+    margin: 0 10px 0 10px;
+  }
+
+  @include max-width(sm) {
+    flex-direction: column;
+    align-items: center;
+    row-gap: 30px;
   }
 }
 
 .toggleButton:global.MuiButtonBase-root.MuiToggleButton-root {
   text-transform: capitalize;
   line-height: normal;
-  letter-spacing: normal;
   font-size: small;
+
+  @include max-width(sm) {
+    width: 125px;
+    height: 40px;
+    font-size: large;
+  }
 }
 
 .toggleButton:global.MuiButtonBase-root.MuiToggleButton-root.Mui-selected {
   color: white;
   background: rgba(102, 76, 40, 0.8);
+}
+
+.order {
+  width: 250px;
+}
+
+.orderMenuItem {
+  min-height: 36px !important;
+}
+
+.noResultFound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.noResultFoundIcon:global.MuiSvgIcon-root {
+  font-size: 200px;
+}
+
+.noResultFoundText {
+  font-size: 20px;
+  font-weight: bold;
 }
