@@ -27,3 +27,11 @@ export interface Coordinate {
   latitude: number;
   longitude: number;
 }
+
+export type HotelListOrderType =
+  | 'HOTEL_TITLE_ASC'
+  | 'HOTEL_TITLE_DESC'
+  | 'HOTEL_RATING_ASC'
+  | 'HOTEL_RATING_DESC'
+  | 'HOTEL_PRICE_ASC'
+  | 'HOTEL_PRICE_DESC';

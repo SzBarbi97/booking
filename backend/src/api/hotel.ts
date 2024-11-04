@@ -10,6 +10,8 @@ export async function getHotels(req: any, res: any): Promise<void> {
   const adultsQuery: number | null = req.query.numberOfAdults;
   const childrenQuery: number | null = req.query.numberOfChildren;
 
+  const order: string | null = req.query.order;
+
   // A mock alkalmazásban az arrival date-re és exit date-re nem szűrűnk
 
   if (countryQuery) {
@@ -29,6 +31,30 @@ export async function getHotels(req: any, res: any): Promise<void> {
 
     const detailedHotelIds: string[] = detailedHotels.map((hotel) => hotel.id);
     hotels = hotels.filter((hotel) => detailedHotelIds.includes(hotel.id));
+  }
+
+  // rendezés
+  if (order) {
+    switch (order) {
+      case 'HOTEL_TITLE_ASC':
+        hotels = hotels.sort((h1, h2) => h1.title.localeCompare(h2.title));
+        break;
+      case 'HOTEL_TITLE_DESC':
+        hotels = hotels.sort((h1, h2) => h2.title.localeCompare(h1.title));
+        break;
+      case 'HOTEL_RATING_ASC':
+        hotels = hotels.sort((h1, h2) => h1.rating - h2.rating);
+        break;
+      case 'HOTEL_RATING_DESC':
+        hotels = hotels.sort((h1, h2) => h2.rating - h1.rating);
+        break;
+      case 'HOTEL_PRICE_ASC':
+        hotels = hotels.sort((h1, h2) => h1.price.localeCompare(h2.price));
+        break;
+      case 'HOTEL_PRICE_DESC':
+        hotels = hotels.sort((h1, h2) => h2.price.localeCompare(h1.price));
+        break;
+    }
   }
 
   res.status(200).json(hotels);
