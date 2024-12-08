@@ -7,5 +7,10 @@ export default defineConfig(() => {
       outDir: 'build',
     },
     plugins: [react()],
+    css: {
+      modules: {
+        generateScopedName: '[name]_[local]',
+      }
+    }
   };
 });
