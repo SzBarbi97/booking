@@ -77,3 +77,25 @@ npm run cy:run:chrome
 ```
 
 A parancs kiadása után lefutnak a terminálban a Cypress tesztek chrome böngészőt használva.
+
+## Playwright tesztek
+
+A FE alkalmazáshoz tartoznak e2e Playwright tesztek, amelyek a `test/playwright` mappa alatt érhetőek el.
+
+### Függőségek telepítése
+
+A `test/playwright` mappa alatt szükséges kiadni:
+
+```shell
+npm i 
+```
+
+### Playwright tesztek indítása
+
+A `test/playwright` mappa alatt szükséges kiadni:
+
+```shell
+npx playwright test --ui
+```
+
+A parancs kiadása után elindul a Playwright alkalmazás, amelyben elindíthatóak az E2E tesztek.
